@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Dots</title>
+  <style>
+    #loading {
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">Loading</div>
+
+  <script>
+    let dotCount = 0;
+    const loadingText = document.getElementById('loading');
+    const maxDots = 3;  // The number of dots to cycle through
+
+    function updateLoadingDots() {
+      dotCount = (dotCount + 1) % (maxDots + 1); // Increment and reset after 3 dots
+      loadingText.textContent = 'Loading' + '.'.repeat(dotCount);
+    }
+
+    // Update every 500ms (half a second)
+    setInterval(updateLoadingDots, 500);
+  </script>
+</body>
+</html>
+
+
+
+
